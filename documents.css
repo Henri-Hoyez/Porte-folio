@@ -1,0 +1,445 @@
+/* Styles spécifiques pour la page documents */
+
+.documents-hero {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.documents-hero-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.documents-hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contenu principal */
+.documents-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.documents-section {
+    margin-bottom: 4rem;
+}
+
+.documents-section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #16a34a;
+    position: relative;
+}
+
+.documents-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 4rem;
+    height: 3px;
+    background: #16a34a;
+}
+
+/* Grille des documents */
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cartes de documents */
+.document-card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.document-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.document-card.featured {
+    border: 2px solid #16a34a;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+}
+
+.document-card.featured:hover {
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.25);
+}
+
+/* Contenu de la carte */
+.document-card {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.document-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+}
+
+.document-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.document-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.document-description {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.document-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.document-size,
+.document-date {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    background: var(--surface);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.document-languages {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.language-tag {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.document-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.doc-tag {
+    background: var(--surface);
+    color: var(--text-muted);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--border);
+}
+
+/* Actions des documents */
+.document-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.document-actions .btn {
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-icon {
+    font-size: 1rem;
+}
+
+/* Réorganisation des cartes pour mobile */
+@media (max-width: 768px) {
+    .document-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .document-icon {
+        align-self: center;
+        padding-top: 0;
+    }
+    
+    .document-actions {
+        flex-direction: column;
+    }
+    
+    .document-actions .btn {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Section d'informations */
+.documents-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.info-link {
+    color: #16a34a;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.info-link:hover {
+    color: #15803d;
+    text-decoration: underline;
+}
+
+/* Styles pour les boutons dans cette page */
+.btn-primary {
+    background: #16a34a;
+    color: white;
+    border: 2px solid #16a34a;
+}
+
+.btn-primary:hover {
+    background: #15803d;
+    border-color: #15803d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #16a34a;
+    border: 2px solid #16a34a;
+}
+
+.btn-secondary:hover {
+    background: #16a34a;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+/* Animations pour les téléchargements */
+.document-card:hover .btn-primary {
+    animation: downloadPulse 2s infinite;
+}
+
+@keyframes downloadPulse {
+    0% {
+        box-shadow: 0 2px 8px rgba(22, 163, 74, 0.2);
+    }
+    50% {
+        box-shadow: 0 4px 16px rgba(22, 163, 74, 0.4);
+    }
+    100% {
+        box-shadow: 0 2px 8px rgba(22, 163, 74, 0.2);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .documents-hero-title {
+        font-size: 2rem;
+    }
+    
+    .documents-hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .documents-content {
+        padding: 2rem 0;
+    }
+    
+    .documents-section-title {
+        font-size: 1.75rem;
+    }
+    
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .document-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .documents-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .documents-hero {
+        padding: 2rem 0;
+    }
+    
+    .documents-hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .document-card {
+        padding: 1rem;
+    }
+    
+    .document-icon {
+        font-size: 2rem;
+    }
+    
+    .info-card {
+        padding: 1.5rem;
+    }
+}
+
+/* États de loading et erreur */
+.document-card.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.document-card.error {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.download-progress {
+    width: 100%;
+    height: 4px;
+    background: var(--surface);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.download-progress-bar {
+    height: 100%;
+    background: #16a34a;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Print styles */
+@media print {
+    .documents-hero {
+        background: white !important;
+        color: black !important;
+        border-bottom: 2px solid #000;
+    }
+    
+    .document-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .document-actions {
+        display: none;
+    }
+    
+    .documents-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .documents-section-title {
+        border-bottom-color: #000 !important;
+    }
+    
+    .documents-section-title::after {
+        background: #000 !important;
+    }
+}
+
+/* Accessibility improvements */
+.document-card:focus-within {
+    outline: 2px solid #16a34a;
+    outline-offset: 2px;
+}
+
+.btn:focus {
+    outline: 2px solid #16a34a;
+    outline-offset: 2px;
+}
+
+/* Dark mode support (si implémenté plus tard) */
+@media (prefers-color-scheme: dark) {
+    .document-card {
+        background: #1f2937;
+        border-color: #374151;
+        color: #f9fafb;
+    }
+    
+    .document-title {
+        color: #f9fafb;
+    }
+    
+    .info-card {
+        background: #1f2937;
+        border-color: #374151;
+    }
+    
+    .info-card h3 {
+        color: #f9fafb;
+    }
+}

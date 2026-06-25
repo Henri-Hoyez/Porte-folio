@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:blog": "node scripts/build-blog.js",
+    "build": "node scripts/build-blog.js"
+  },
+  "dependencies": {
+    "gray-matter": "^2.0.1",
+    "markdown-it": "^14.1.0",
+    "plotly.js-dist-min": "^2.35.3"
+  }
+}

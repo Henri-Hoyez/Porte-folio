@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documents et ressources téléchargeables - Publications, CV et ressources académiques">
+    <title>Documents - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="documents.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">Portfolio</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cv.html" class="nav-link">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog/index.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="recherches.html" class="nav-link">Recherches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="documents.html" class="nav-link active">Documents</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="documents-hero">
+            <div class="container">
+                <div class="documents-hero-content">
+                    <h1 class="documents-hero-title">Documents & Ressources</h1>
+                    <p class="documents-hero-subtitle">Accédez à mes publications, CV et autres ressources académiques</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="documents-content">
+                <section class="documents-section">
+                    <h2 class="documents-section-title">CV & Profil</h2>
+                    <div class="documents-grid">
+                        <div class="document-card featured">
+                            <div class="document-icon">📄</div>
+                            <div class="document-content">
+                                <h3 class="document-title">CV Complet (PDF)</h3>
+                                <p class="document-description">Version complète de mon curriculum vitae au format PDF, incluant toutes mes expériences et formations.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">1.2 MB</span>
+                                    <span class="document-date">Mise à jour : Décembre 2024</span>
+                                </div>
+                                <div class="document-languages">
+                                    <span class="language-tag">Français</span>
+                                    <span class="language-tag">Anglais</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers CV_Francais.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    Télécharger FR
+                                </a>
+                                <a href="#" class="btn btn-secondary" onclick="alert('Lien vers CV_English.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    Télécharger EN
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-icon">👤</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Profil de Recherche</h3>
+                                <p class="document-description">Résumé détaillé de mes domaines de recherche, méthodologies et projets en cours.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">800 KB</span>
+                                    <span class="document-date">Novembre 2024</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers Profil_Recherche.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    Télécharger
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="documents-section">
+                    <h2 class="documents-section-title">Publications & Articles</h2>
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-icon">📚</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Article de recherche principal</h3>
+                                <p class="document-description">"Titre de votre article principal" - Publication dans [Journal], 2024.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">2.1 MB</span>
+                                    <span class="document-date">Publié : Octobre 2024</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">Recherche</span>
+                                    <span class="doc-tag">Peer-reviewed</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers article.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    PDF
+                                </a>
+                                <a href="#" class="btn btn-secondary" onclick="alert('Lien vers DOI')">
+                                    <span class="btn-icon">🔗</span>
+                                    DOI
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-icon">📋</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Prépublication (Preprint)</h3>
+                                <p class="document-description">"Titre de votre prépublication" - Soumis pour révision par les pairs.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">1.8 MB</span>
+                                    <span class="document-date">Soumis : Septembre 2024</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">Preprint</span>
+                                    <span class="doc-tag">En révision</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers preprint.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    PDF
+                                </a>
+                                <a href="#" class="btn btn-secondary" onclick="alert('Lien vers arXiv')">
+                                    <span class="btn-icon">🔗</span>
+                                    arXiv
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-icon">🎓</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Mémoire de Master</h3>
+                                <p class="document-description">"Titre de votre mémoire de Master" - Université, 2023. Mention Très Bien.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">5.2 MB</span>
+                                    <span class="document-date">Soutenu : Juin 2023</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">Mémoire</span>
+                                    <span class="doc-tag">Master</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers memoire.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    Télécharger
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="documents-section">
+                    <h2 class="documents-section-title">Présentations & Conférences</h2>
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-icon">📊</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Présentation Conférence Internationale</h3>
+                                <p class="document-description">Slides de ma présentation à la [Nom de la Conférence], 2024.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">15.3 MB</span>
+                                    <span class="document-date">Présenté : Mars 2024</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">Slides</span>
+                                    <span class="doc-tag">Conférence</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers slides.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    PDF
+                                </a>
+                                <a href="#" class="btn btn-secondary" onclick="alert('Lien vers slides.pptx')">
+                                    <span class="btn-icon">⬇</span>
+                                    PPTX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-icon">🖼️</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Poster de Recherche</h3>
+                                <p class="document-description">Poster présenté lors du [Nom de l'Événement] sur mes travaux actuels.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">8.7 MB</span>
+                                    <span class="document-date">Présenté : Janvier 2024</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">Poster</span>
+                                    <span class="doc-tag">A0</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers poster.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    PDF HD
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-icon">🎥</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Présentation Vidéo</h3>
+                                <p class="document-description">Enregistrement de ma présentation pour le Séminaire Doctoral 2024.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">125 MB</span>
+                                    <span class="document-date">Enregistré : Mai 2024</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">Vidéo</span>
+                                    <span class="doc-tag">25 min</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers video.mp4')">
+                                    <span class="btn-icon">▶</span>
+                                    Regarder
+                                </a>
+                                <a href="#" class="btn btn-secondary" onclick="alert('Lien vers YouTube')">
+                                    <span class="btn-icon">🔗</span>
+                                    YouTube
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="documents-section">
+                    <h2 class="documents-section-title">Ressources & Outils</h2>
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-icon">💾</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Code & Datasets</h3>
+                                <p class="document-description">Scripts Python et jeux de données utilisés dans mes recherches (GitHub).</p>
+                                <div class="document-meta">
+                                    <span class="document-size">Variable</span>
+                                    <span class="document-date">Mis à jour régulièrement</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">Code</span>
+                                    <span class="doc-tag">Open Source</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers GitHub')">
+                                    <span class="btn-icon">🔗</span>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-icon">📖</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Bibliographie Annotée</h3>
+                                <p class="document-description">Sélection de références clés dans mon domaine de recherche avec annotations.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">2.8 MB</span>
+                                    <span class="document-date">Mise à jour : Octobre 2024</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">Bibliographie</span>
+                                    <span class="doc-tag">Annotée</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers biblio.pdf')">
+                                    <span class="btn-icon">⬇</span>
+                                    PDF
+                                </a>
+                                <a href="#" class="btn btn-secondary" onclick="alert('Lien vers biblio.bib')">
+                                    <span class="btn-icon">⬇</span>
+                                    BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-icon">🔧</div>
+                            <div class="document-content">
+                                <h3 class="document-title">Outils & Templates</h3>
+                                <p class="document-description">Templates LaTeX et outils développés pour faciliter la recherche.</p>
+                                <div class="document-meta">
+                                    <span class="document-size">450 KB</span>
+                                    <span class="document-date">Créé : Août 2024</span>
+                                </div>
+                                <div class="document-tags">
+                                    <span class="doc-tag">LaTeX</span>
+                                    <span class="doc-tag">Templates</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <a href="#" class="btn btn-primary" onclick="alert('Lien vers templates.zip')">
+                                    <span class="btn-icon">⬇</span>
+                                    ZIP
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="documents-section">
+                    <h2 class="documents-section-title">Informations & Contact</h2>
+                    <div class="documents-info">
+                        <div class="info-card">
+                            <h3>📧 Demandes spécifiques</h3>
+                            <p>Pour accéder à des documents non listés ici ou pour des versions spécifiques, n'hésitez pas à me contacter par email.</p>
+                            <a href="mailto:votre.email@example.com" class="info-link">votre.email@example.com</a>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>🔄 Mises à jour</h3>
+                            <p>Cette page est mise à jour régulièrement avec mes nouvelles publications et ressources. Dernière mise à jour : Décembre 2024.</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>⚖️ Licences</h3>
+                            <p>Sauf mention contraire, les documents sont disponibles sous licence Creative Commons. Le code source est sous licence MIT.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Portfolio. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="mailto:contact@example.com">Contact</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

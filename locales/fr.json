@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "home_title": "Portfolio — Accueil",
+    "home_description": "Portfolio personnel — CV, recherches, blog et documents",
+    "cv_title": "CV — Portfolio",
+    "cv_description": "Curriculum Vitae — parcours académique et professionnel"
+  },
+  "nav": {
+    "home": "Accueil",
+    "cv": "CV",
+    "blog": "Blog",
+    "researches": "Recherches",
+    "documents": "Documents",
+    "menu": "Menu",
+    "logo_home": "Accueil",
+    "logo_cv": "Mon CV"
+  },
+  "home": {
+    "hero_title": "Bienvenue sur mon portfolio",
+    "hero_subtitle": "Ingénieur Machine Learning — Doctorant",
+    "btn_cv": "Voir mon CV",
+    "btn_researches": "Mes recherches",
+    "about_title": "À propos de moi",
+    "about_p1": "Je suis ingénieur en Machine Learning passionné par la recherche. Ce site présente mon parcours académique, mes projets de recherche actuels et les documents que je souhaite partager avec la communauté.",
+    "about_p2": "Mon expérience industrielle comme ingénieur ML et mon parcours doctoral me permettent de mener des projets de recherche ambitieux.",
+    "feature_cv_title": "CV",
+    "feature_cv_desc": "Découvrez mon parcours académique et professionnel",
+    "feature_cv_link": "En savoir plus →",
+    "feature_blog_title": "Blog",
+    "feature_blog_desc": "Articles techniques et visualisations de données interactives",
+    "feature_blog_link": "Lire les articles →",
+    "feature_research_title": "Recherches",
+    "feature_research_desc": "Explorez mes projets de recherche et publications",
+    "feature_research_link": "En savoir plus →",
+    "feature_docs_title": "Documents",
+    "feature_docs_desc": "Téléchargez mes publications et documents",
+    "feature_docs_link": "En savoir plus →"
+  },
+  "footer": {
+    "copyright": "© 2025 Portfolio. Tous droits réservés.",
+    "contact": "Me contacter"
+  },
+  "coming_soon": {
+    "title": "Page en cours de développement",
+    "subtitle": "Je travaille actuellement sur une nouvelle version de mon site.<br>Revenez bientôt pour découvrir mes projets et recherches !",
+    "progress": "Progression : 75%",
+    "contact_intro": "En attendant, vous pouvez me contacter à :",
+    "signoff": "À bientôt !"
+  },
+  "cv": {
+    "contact": "Me contacter !",
+    "title": "Ingénieur IA générative — Doctorant",
+    "profile_alt": "Photo de profil",
+    "section_about": "À propos de moi",
+    "section_education": "Formation",
+    "section_experience": "Expériences",
+    "section_skills": "Compétences",
+    "section_papers": "Publications",
+    "skills_technical": "Techniques",
+    "skills_research": "Recherche",
+    "skills_languages": "Langues"
+  },
+  "a11y": {
+    "section_closed": "Section fermée",
+    "section_opened": "Section développée, plus de détails disponibles"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Articles techniques, visualisations interactives et notes de recherche — rédigés en Markdown.",
+    "read_more": "Lire l'article →",
+    "back": "← Retour au blog",
+    "empty": "Aucun article pour le moment.",
+    "meta_description": "Articles de blog — Machine Learning, recherche et visualisation de données"
+  }
+}

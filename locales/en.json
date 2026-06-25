@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "home_title": "Portfolio — Home",
+    "home_description": "Personal portfolio — CV, research, blog and documents",
+    "cv_title": "CV — Portfolio",
+    "cv_description": "Curriculum Vitae — academic and professional journey"
+  },
+  "nav": {
+    "home": "Home",
+    "cv": "CV",
+    "blog": "Blog",
+    "researches": "Researches",
+    "documents": "Documents",
+    "menu": "Menu",
+    "logo_home": "Home",
+    "logo_cv": "My Resume"
+  },
+  "home": {
+    "hero_title": "Welcome to my portfolio",
+    "hero_subtitle": "Machine Learning Engineer — PhD Student",
+    "btn_cv": "See my CV",
+    "btn_researches": "My researches",
+    "about_title": "About me",
+    "about_p1": "I am a Machine Learning Engineer passionate about research. This site presents my academic journey, my current research projects and the documents I want to share with the community.",
+    "about_p2": "My industrial experience as an ML Engineer and my academic path as a PhD Student enable me to drive challenging research projects.",
+    "feature_cv_title": "CV",
+    "feature_cv_desc": "Discover my academic and professional journey",
+    "feature_cv_link": "See more →",
+    "feature_blog_title": "Blog",
+    "feature_blog_desc": "Technical articles and interactive data visualizations",
+    "feature_blog_link": "Read articles →",
+    "feature_research_title": "Researches",
+    "feature_research_desc": "Explore my research projects and publications",
+    "feature_research_link": "See more →",
+    "feature_docs_title": "Documents",
+    "feature_docs_desc": "Download my publications and documents",
+    "feature_docs_link": "See more →"
+  },
+  "footer": {
+    "copyright": "© 2025 Portfolio. All rights reserved.",
+    "contact": "Contact me"
+  },
+  "coming_soon": {
+    "title": "Page in progress",
+    "subtitle": "I am currently working on a new version of my website.<br>Come back soon to discover my projects and researches!",
+    "progress": "Progress: 75%",
+    "contact_intro": "In the meantime, you can contact me at:",
+    "signoff": "See you soon!"
+  },
+  "cv": {
+    "contact": "Contact me!",
+    "title": "Generative AI Engineer — PhD Student",
+    "profile_alt": "Profile photo",
+    "section_about": "About me",
+    "section_education": "Education",
+    "section_experience": "Experiences",
+    "section_skills": "Skills",
+    "section_papers": "Papers",
+    "skills_technical": "Techniques",
+    "skills_research": "Research",
+    "skills_languages": "Languages"
+  },
+  "a11y": {
+    "section_closed": "Section closed",
+    "section_opened": "Section expanded, more details available"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Technical articles, interactive visualizations and research notes — written in Markdown.",
+    "read_more": "Read article →",
+    "back": "← Back to blog",
+    "empty": "No articles yet.",
+    "meta_description": "Blog articles — Machine Learning, research and data visualization"
+  }
+}

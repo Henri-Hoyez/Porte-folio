@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DataSight Technologies - Génération de capteurs virtuels à partir de données clients">
+    <title>DataSight Technologies - Capteurs Virtuels Intelligents</title>
+    <link rel="stylesheet" href="datasight.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particules d'arrière-plan -->
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-glass">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📡</span>
+                <span class="logo-text">DataSight Technologies</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link">Accueil</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#technology" class="nav-link">Technologie</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero avec parallaxe -->
+    <section class="hero" id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-glass-card">
+                <h1 class="hero-title">
+                    <span class="title-main">DataSight</span>
+                    <span class="title-sub">Technologies</span>
+                </h1>
+                <p class="hero-subtitle">Génération de capteurs virtuels intelligents</p>
+                <p class="hero-description">
+                    Transformez vos données en capteurs virtuels haute précision grâce à l'intelligence artificielle avancée
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Découvrir nos solutions</button>
+                    <button class="btn-secondary">Voir la démo</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visualization">
+            <div class="signal-container">
+                <canvas id="signalCanvas" width="800" height="300"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Solutions</h2>
+                <p class="section-subtitle">Des capteurs virtuels sur mesure pour votre industrie</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card glass-card" data-parallax="0.1">
+                    <div class="service-icon">🔬</div>
+                    <h3>Analyse Prédictive</h3>
+                    <p>Anticipez les défaillances et optimisez vos processus grâce à nos algorithmes d'apprentissage automatique</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Machine Learning</span>
+                        <span class="feature-tag">Prédiction</span>
+                        <span class="feature-tag">Optimisation</span>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card" data-parallax="0.2">
+                    <div class="service-icon">📊</div>
+                    <h3>Capteurs Virtuels</h3>
+                    <p>Créez des capteurs virtuels précis à partir de vos données existantes, sans installation physique</p>
+                    <div class="service-features">
+                        <span class="feature-tag">IA Générative</span>
+                        <span class="feature-tag">Simulation</span>
+                        <span class="feature-tag">Précision</span>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card" data-parallax="0.15">
+                    <div class="service-icon">⚡</div>
+                    <h3>Traitement Temps Réel</h3>
+                    <p>Analysez et traitez vos flux de données en temps réel avec une latence minimale</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Streaming</span>
+                        <span class="feature-tag">Faible Latence</span>
+                        <span class="feature-tag">Scalabilité</span>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card" data-parallax="0.25">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Détection d'Anomalies</h3>
+                    <p>Identifiez automatiquement les comportements anormaux dans vos systèmes industriels</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Deep Learning</span>
+                        <span class="feature-tag">Surveillance</span>
+                        <span class="feature-tag">Alertes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Technologie -->
+    <section class="technology" id="technology">
+        <div class="container">
+            <div class="tech-content">
+                <div class="tech-text">
+                    <h2 class="section-title">Notre Technologie</h2>
+                    <p class="tech-description">
+                        Nous utilisons des algorithmes d'intelligence artificielle de pointe pour transformer vos données historiques 
+                        en capteurs virtuels haute précision. Notre approche combine apprentissage profond, traitement du signal 
+                        avancé et modélisation statistique.
+                    </p>
+                    
+                    <div class="tech-stats">
+                        <div class="stat-item glass-card">
+                            <div class="stat-number" data-target="95">0</div>
+                            <div class="stat-label">% Précision</div>
+                        </div>
+                        <div class="stat-item glass-card">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">ms Latence</div>
+                        </div>
+                        <div class="stat-item glass-card">
+                            <div class="stat-number" data-target="1000">0</div>
+                            <div class="stat-label">+ Capteurs Déployés</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-visualization">
+                    <div class="chart-container glass-card">
+                        <h4>Performance des Capteurs Virtuels</h4>
+                        <canvas id="performanceChart" width="500" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Processus</h2>
+                <p class="section-subtitle">De vos données à vos capteurs virtuels en 4 étapes</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step glass-card" data-step="1">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Analyse des Données</h3>
+                        <p>Nous analysons vos données historiques pour identifier les patterns et corrélations</p>
+                    </div>
+                </div>
+                
+                <div class="process-step glass-card" data-step="2">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Modélisation IA</h3>
+                        <p>Développement de modèles d'apprentissage automatique spécifiques à vos besoins</p>
+                    </div>
+                </div>
+                
+                <div class="process-step glass-card" data-step="3">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Validation & Tests</h3>
+                        <p>Tests rigoureux et validation de la précision des capteurs virtuels</p>
+                    </div>
+                </div>
+                
+                <div class="process-step glass-card" data-step="4">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Déploiement</h3>
+                        <p>Intégration seamless dans votre infrastructure existante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info glass-card">
+                    <h2>Contactez-nous</h2>
+                    <p>Prêt à transformer vos données en intelligence actionnable ?</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>contact@datasight-tech.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>+33 1 23 45 67 89</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Paris, France</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary">Demander une démo</button>
+                </div>
+                
+                <div class="contact-form glass-card">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Entreprise">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Votre message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">📡</span>
+                    <span class="logo-text">DataSight Technologies</span>
+                </div>
+                <p>&copy; 2025 DataSight Technologies. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="datasight.js"></script>
+</body>
+</html>

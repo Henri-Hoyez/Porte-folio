@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En cours de développement - Henri Hoyez</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function(){var l=localStorage.getItem('site-lang')||((navigator.language||'fr').toLowerCase().startsWith('fr')?'fr':'en');document.documentElement.lang=l;})();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.1s forwards;
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 4px;
+            margin: 2rem 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.4s forwards;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            height: 8px;
+            border-radius: 50px;
+            width: 0%;
+            animation: progressAnimation 3s ease-out 1.8s forwards;
+        }
+
+        .progress-text {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.7s forwards;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: white;
+            opacity: 0.8;
+        }
+
+        .coming-soon-lang {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 10;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes progressAnimation {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 75%;
+            }
+        }
+
+        /* Particules d'arrière-plan */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            width: 20px;
+            height: 20px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            width: 15px;
+            height: 15px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(3) {
+            width: 25px;
+            height: 25px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(4) {
+            width: 12px;
+            height: 12px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(5) {
+            width: 18px;
+            height: 18px;
+            top: 70%;
+            left: 60%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.8;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .title {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="coming-soon-page">
+    <div class="coming-soon-lang"></div>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <div class="logo">🚀</div>
+        <h1 class="title" data-i18n="coming_soon.title">Page in progress</h1>
+        <p class="subtitle" data-i18n-html="coming_soon.subtitle">
+            I am currently working on a new version of my website.<br>
+            Come back soon to discover my projects and researches!
+        </p>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+            <div class="progress-text" data-i18n="coming_soon.progress">Progress: 75%</div>
+        </div>
+
+        <div class="contact-info">
+            <p data-i18n="coming_soon.contact_intro">In the meantime, you can contact me at:</p>
+            <p><a href="mailto:henri.hoyez@isen.yncrea.fr">henri.hoyez@isen.yncrea.fr</a></p>
+            <p data-i18n="coming_soon.signoff">See you soon!</p>
+        </div>
+    </div>
+    <script src="i18n.js"></script>
+</body>
+</html>

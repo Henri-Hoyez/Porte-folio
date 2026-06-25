@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{locale}}" data-i18n-page-description="blog.meta_description">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{description}}">
+    <title>{{title}} — Blog</title>
+    <link rel="stylesheet" href="{{root}}styles.css">
+    <link rel="stylesheet" href="{{root}}blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      (function(){var l=localStorage.getItem('site-lang')||((navigator.language||'fr').toLowerCase().startsWith('fr')?'fr':'en');document.documentElement.lang=l;})();
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="{{root}}index.html" class="nav-logo" data-i18n="nav.logo_home">Portfolio</a>
+                <button class="nav-toggle" id="nav-toggle" data-i18n-aria="nav.menu" aria-label="Menu">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="{{root}}index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a href="{{root}}cv.html" class="nav-link" data-i18n="nav.cv">CV</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link active" data-i18n="nav.blog">Blog</a></li>
+                    <li class="nav-item"><a href="{{root}}coming-soon.html" class="nav-link" data-i18n="nav.researches">Researches</a></li>
+                    <li class="nav-item"><a href="{{root}}coming-soon.html" class="nav-link" data-i18n="nav.documents">Documents</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main blog-main">
+        <article class="blog-article container">
+            <header class="blog-article-header">
+                <a href="index.html" class="blog-back-link" data-i18n="blog.back">← Back to blog</a>
+                <time class="blog-date" datetime="{{date}}">{{date}}</time>
+                <h1 class="blog-title">{{title}}</h1>
+                {{tags}}
+            </header>
+            <div class="blog-content">
+                {{content}}
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-i18n="footer.copyright">&copy; 2025 Portfolio. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="mailto:henri.hoyez@isen.yncrea.fr" data-i18n="footer.contact">Contact me</a>
+                    <a href="https://www.linkedin.com/in/henri-hoyez-9b4297171/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{root}}i18n.js"></script>
+    <script src="{{root}}script.js"></script>
+    <script src="{{asset_root}}vendor/plotly.min.js"></script>
+    <script src="{{asset_root}}scripts/blog-csv.js"></script>
+    {{scripts}}
+</body>
+</html>
