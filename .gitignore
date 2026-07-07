@@ -1,3 +1,5 @@
 node_modules/
-blog/
 .DS_Store
+blog/*.html
+blog/en/*.html
+blog/fr/*.html
