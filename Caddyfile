@@ -1,0 +1,11 @@
+# Production — HTTPS automatique via Let's Encrypt
+# Prérequis : DNS A de www.henrihoyez.ovh (et henrihoyez.ovh) → IP du VPS
+# Ports 80 et 443 ouverts sur le pare-feu
+
+www.henrihoyez.ovh {
+	reverse_proxy website:80
+}
+
+henrihoyez.ovh {
+	redir https://www.henrihoyez.ovh{uri} permanent
+}

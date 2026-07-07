@@ -1,5 +1,5 @@
 # Étape 1 : génération du blog depuis les fichiers Markdown
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 WORKDIR /app
 
@@ -21,7 +21,7 @@ COPY styles.css blog.css script.js i18n.js cv.css recherches.css documents.css d
 COPY locales/ /usr/share/nginx/html/locales/
 COPY datasight.js demo.js /usr/share/nginx/html/
 COPY --from=builder /app/blog /usr/share/nginx/html/blog
-
+    
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]

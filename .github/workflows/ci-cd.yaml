@@ -1,3 +1,8 @@
+# Secrets GitHub requis :
+#   DOCKER_HUB_USER, DOCKER_HUB_SECRET
+#   VPS_HOST, VPS_USER, VPS_SSH_KEY
+# Optionnel : VPS_SSH_PORT (défaut 22), VPS_DEPLOY_DIR (défaut ~/Porte-folio)
+
 name: Docker Image CI
 
 on:
@@ -25,6 +30,15 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_SECRET }}
 
+      - name: Build Docker image (PR)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          push: false
+          tags: portfolio-website:ci
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
@@ -36,5 +50,18 @@ jobs:
             ${{ secrets.DOCKER_HUB_USER }}/${{ env.IMAGE_NAME }}:latest
             ${{ secrets.DOCKER_HUB_USER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
-
-              
+      - name: Deploy on VPS
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            DEPLOY_DIR="/home/website/Porte-folio"
+            cd "$DEPLOY_DIR"
+            git fetch origin
+            git checkout deploy
+            git pull origin deploy
+            docker compose -f docker-compose.prod.yml pull
+            docker compose -f docker-compose.prod.yml up -d
+            docker compose -f docker-compose.prod.yml ps
