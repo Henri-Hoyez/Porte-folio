@@ -109,6 +109,12 @@ body {
 }
 
 /* Language switcher */
+/* Masquage des blocs de langue inactive (prioritaire sur display: grid/flex des enfants) */
+.is-lang-hidden,
+[data-lang-block][hidden] {
+    display: none !important;
+}
+
 .lang-switcher {
     display: flex;
     align-items: center;

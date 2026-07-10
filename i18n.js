@@ -83,7 +83,14 @@ window.SiteI18n = (function () {
   function applyLangBlocks() {
     document.querySelectorAll('[data-lang-block]').forEach((el) => {
       const blockLang = el.getAttribute('data-lang-block');
-      el.hidden = blockLang !== currentLang;
+      const hide = blockLang !== currentLang;
+      el.hidden = hide;
+      el.classList.toggle('is-lang-hidden', hide);
+      if (hide) {
+        el.setAttribute('aria-hidden', 'true');
+      } else {
+        el.removeAttribute('aria-hidden');
+      }
     });
   }
 
