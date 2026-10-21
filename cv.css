@@ -336,13 +336,7 @@
     font-size: 0.875rem;
     font-weight: 500;
     border: 1px solid var(--border);
-    transition: var(--transition);
-}
-
-.cv-skill:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+    cursor: default;
 }
 
 /* Publications */
