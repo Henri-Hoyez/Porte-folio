@@ -1,7 +1,6 @@
 # Production — https://www.henrihoyez.ovh
-# Usage sur le VPS :
-#   docker compose -f docker-compose.prod.yml pull
-#   docker compose -f docker-compose.prod.yml up -d
+# `up -d` seul réutilise l'image locale `latest` déjà présente.
+# Le workflow CI tire le tag du commit, le retague en `latest`, puis recrée les conteneurs.
 services:
   website:
     image: henriho/portfolio-website:latest

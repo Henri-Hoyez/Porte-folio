@@ -52,17 +52,26 @@ jobs:
 
       - name: Deploy on VPS
         uses: appleboy/ssh-action@v1.2.2
+        env:
+          IMAGE_REF: ${{ secrets.DOCKER_HUB_USER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          IMAGE_LATEST: henriho/portfolio-website:latest
         with:
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: true
+          envs: IMAGE_REF,IMAGE_LATEST
           script: |
+            set -euo pipefail
             DEPLOY_DIR="/home/website/Porte-folio"
             cd "$DEPLOY_DIR"
             git fetch origin
             git checkout deploy
-            docker compose -f docker-compose.prod.yml down
-            git pull origin deploy
-            docker compose -f docker-compose.prod.yml
-            docker compose -f docker-compose.prod.yml up -d
+            git pull --ff-only origin deploy
+            echo "Téléchargement de l'image de ce commit : $IMAGE_REF"
+            docker pull "$IMAGE_REF"
+            docker tag "$IMAGE_REF" "$IMAGE_LATEST"
+            docker compose -f docker-compose.prod.yml up -d --force-recreate --remove-orphans
+            docker image prune -f
+            docker image inspect "$IMAGE_LATEST" --format 'Image en prod : {{.Id}} créée le {{.Created}}'
             docker ps
