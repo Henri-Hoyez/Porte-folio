@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; media-src blob:; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+    <meta name="description" content="Rappel doux pour boire de l'eau pendant la récupération.">
+    <meta name="theme-color" content="#071f27">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hydratation">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Hydratation</title>
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hydratation.css?v=3">
+</head>
+<body>
+    <div class="backdrop" aria-hidden="true"></div>
+    <main class="app" id="app" data-state="idle">
+        <div class="panel">
+            <header class="top">
+                <div class="brand">
+                    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 3.2c4.2 6.2 9 10.4 9 16.1a9 9 0 1 1-18 0c0-5.7 4.8-9.9 9-16.1z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path>
+                        <path d="M12.2 20.2c.7 2.1 2.4 3.4 4.3 3.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.75"></path>
+                    </svg>
+                    <h1>Hydratation</h1>
+                </div>
+                <p class="lede">Un rappel doux pour boire pendant la récupération.</p>
+            </header>
+
+            <section class="stage" id="stage">
+                <p class="kicker" id="kicker">
+                    <span class="pulse" id="pulse" hidden></span>
+                    <span id="kicker-text">Intervalle</span>
+                </p>
+                <div class="dial">
+                    <svg viewBox="0 0 120 120" aria-hidden="true">
+                        <circle class="dial-track" cx="60" cy="60" r="54"></circle>
+                        <circle class="dial-value" id="ring" cx="60" cy="60" r="54"></circle>
+                    </svg>
+                    <div class="dial-center">
+                        <p class="time" id="time">15:00</p>
+                        <p class="when" id="when">entre chaque verre</p>
+                    </div>
+                </div>
+                <button type="button" class="sound-gate" id="sound-gate" hidden>Activer le son sur cet appareil</button>
+            </section>
+
+            <section class="controls" aria-label="Réglage du rappel">
+                <div class="presets" role="group" aria-label="Suggestions d'intervalle">
+                    <button type="button" class="preset" data-minutes="10" aria-pressed="false" aria-label="Récupération musculation, 10 minutes">Muscu</button>
+                    <button type="button" class="preset" data-minutes="15" aria-pressed="true" aria-label="Récupération course, 15 minutes">Course</button>
+                    <button type="button" class="preset" data-minutes="20" aria-pressed="false" aria-label="Récupération escalade, 20 minutes">Escalade</button>
+                </div>
+
+                <div class="stepper">
+                    <button type="button" class="step" id="minus" aria-label="Retirer une minute">−</button>
+                    <div class="minutes">
+                        <input id="minutes" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Intervalle en minutes" value="15">
+                        <span class="unit" id="unit">minutes</span>
+                    </div>
+                    <button type="button" class="step" id="plus" aria-label="Ajouter une minute">+</button>
+                </div>
+
+                <button type="button" class="go" id="toggle">Lancer le rappel</button>
+                <button type="button" class="ghost" id="preview">Écouter l'alarme</button>
+
+                <label class="volume">
+                    <span>Volume</span>
+                    <input id="volume" type="range" min="0" max="100" value="50" step="1">
+                </label>
+
+                <p class="status" id="status">Prêt pour la récupération</p>
+                <p class="error" id="error" role="alert" hidden></p>
+            </section>
+
+            <section class="share" id="share" aria-label="Continuer sur un autre appareil">
+                <button type="button" class="share-toggle" id="share-toggle" aria-expanded="false" aria-controls="share-panel">
+                    <span class="share-dot" id="share-dot" hidden></span>
+                    <span id="share-toggle-text">Continuer sur un autre appareil</span>
+                </button>
+                <div class="share-panel" id="share-panel" hidden>
+                    <p class="share-sync" id="share-sync"></p>
+                    <div class="share-qr-wrap">
+                        <canvas class="share-qr" id="share-qr" width="1" height="1" aria-label="QR code du lien de reprise" role="img"></canvas>
+                    </div>
+                    <p class="share-help">Scannez ce QR code avec le téléphone, ou envoyez-lui le lien. Les deux appareils suivent le même rappel&nbsp;: lancer ou arrêter sur l'un agit sur l'autre.</p>
+                    <div class="share-actions">
+                        <button type="button" class="share-btn" id="share-copy">Copier le lien</button>
+                        <button type="button" class="share-btn" id="share-native" hidden>Envoyer…</button>
+                    </div>
+                    <button type="button" class="ghost share-unlink" id="share-unlink">Détacher cet appareil</button>
+                    <p class="share-warn">Toute personne qui possède ce lien peut suivre et piloter ce rappel. Ne le publiez pas.</p>
+                </div>
+            </section>
+
+            <p class="note">Écran verrouillé, le son continue — y compris sur iPhone — tant que cet onglet reste ouvert. L'alarme est douce&nbsp;: monter le volume du téléphone si on l'entend mal.</p>
+            <p class="sr-only" id="live" aria-live="polite"></p>
+            <noscript>
+                <p class="note">Activez JavaScript pour utiliser le rappel.</p>
+            </noscript>
+        </div>
+    </main>
+    <script src="hydratation-qr.js?v=1"></script>
+    <script src="hydratation-sync.js?v=1"></script>
+    <script src="hydratation.js?v=3"></script>
+</body>
+</html>

@@ -7,6 +7,18 @@ services:
     expose:
       - "80"
     restart: unless-stopped
+    depends_on:
+      - hydratation-sync
+
+  # Relais chiffré de bout en bout pour la page hydratation (voir sync/).
+  # Joignable uniquement depuis nginx (`website`) via /api/hydratation/.
+  hydratation-sync:
+    image: henriho/portfolio-hydratation-sync:latest
+    expose:
+      - "3000"
+    environment:
+      TRUST_PROXY: "1"
+    restart: unless-stopped
 
   caddy:
     image: caddy:2-alpine

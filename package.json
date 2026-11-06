@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "build:blog": "node scripts/build-blog.js",
-    "build": "node scripts/build-blog.js"
+    "build": "node scripts/build-blog.js",
+    "dev:hydratation": "node sync/dev.js",
+    "sync": "node sync/server.js"
   },
   "dependencies": {
     "gray-matter": "^2.0.1",

@@ -13,6 +13,7 @@ on:
 
 env:
   IMAGE_NAME: portfolio-website
+  SYNC_IMAGE_NAME: portfolio-hydratation-sync
 
 jobs:
   build-prod:
@@ -39,6 +40,15 @@ jobs:
           push: false
           tags: portfolio-website:ci
 
+      - name: Build sync relay image (PR)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./sync
+          file: ./sync/Dockerfile
+          platforms: linux/amd64
+          push: false
+          tags: portfolio-hydratation-sync:ci
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
@@ -50,17 +60,30 @@ jobs:
             ${{ secrets.DOCKER_HUB_USER }}/${{ env.IMAGE_NAME }}:latest
             ${{ secrets.DOCKER_HUB_USER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
+      - name: Build and push sync relay image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./sync
+          file: ./sync/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_HUB_USER }}/${{ env.SYNC_IMAGE_NAME }}:latest
+            ${{ secrets.DOCKER_HUB_USER }}/${{ env.SYNC_IMAGE_NAME }}:${{ github.sha }}
+
       - name: Deploy on VPS
         uses: appleboy/ssh-action@v1.2.2
         env:
           IMAGE_REF: ${{ secrets.DOCKER_HUB_USER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           IMAGE_LATEST: henriho/portfolio-website:latest
+          SYNC_IMAGE_REF: ${{ secrets.DOCKER_HUB_USER }}/${{ env.SYNC_IMAGE_NAME }}:${{ github.sha }}
+          SYNC_IMAGE_LATEST: henriho/portfolio-hydratation-sync:latest
         with:
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
-          envs: IMAGE_REF,IMAGE_LATEST
+          envs: IMAGE_REF,IMAGE_LATEST,SYNC_IMAGE_REF,SYNC_IMAGE_LATEST
           script: |
             set -euo pipefail
             DEPLOY_DIR="/home/website/Porte-folio"
@@ -68,10 +91,13 @@ jobs:
             git fetch origin
             git checkout deploy
             git pull --ff-only origin deploy
-            echo "Téléchargement de l'image de ce commit : $IMAGE_REF"
+            echo "Téléchargement des images de ce commit : $IMAGE_REF et $SYNC_IMAGE_REF"
             docker pull "$IMAGE_REF"
             docker tag "$IMAGE_REF" "$IMAGE_LATEST"
+            docker pull "$SYNC_IMAGE_REF"
+            docker tag "$SYNC_IMAGE_REF" "$SYNC_IMAGE_LATEST"
             docker compose -f docker-compose.prod.yml up -d --force-recreate --remove-orphans
             docker image prune -f
-            docker image inspect "$IMAGE_LATEST" --format 'Image en prod : {{.Id}} créée le {{.Created}}'
+            docker image inspect "$IMAGE_LATEST" --format 'Site en prod : {{.Id}} créée le {{.Created}}'
+            docker image inspect "$SYNC_IMAGE_LATEST" --format 'Relais en prod : {{.Id}} créée le {{.Created}}'
             docker ps

@@ -16,11 +16,11 @@ FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY index.html cv.html coming-soon.html recherches.html documents.html datasight.html demo.html /usr/share/nginx/html/
-COPY styles.css blog.css script.js i18n.js cv.css recherches.css documents.css datasight.css demo.css /usr/share/nginx/html/
+COPY index.html cv.html coming-soon.html recherches.html documents.html datasight.html demo.html hydratation.html /usr/share/nginx/html/
+COPY styles.css blog.css script.js i18n.js cv.css recherches.css documents.css datasight.css demo.css hydratation.css /usr/share/nginx/html/
 COPY locales/ /usr/share/nginx/html/locales/
 COPY imgs/ /usr/share/nginx/html/imgs/
-COPY datasight.js demo.js /usr/share/nginx/html/
+COPY datasight.js demo.js hydratation.js hydratation-worklet.js hydratation-sync.js hydratation-qr.js /usr/share/nginx/html/
 COPY --from=builder /app/blog /usr/share/nginx/html/blog
     
 EXPOSE 80
